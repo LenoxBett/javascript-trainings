@@ -1,0 +1,87 @@
+<!-- Clean up the following variable to give the clean version 
+    in lower case. Using inbuilt methods in the string class
+name = “  JOHn  .“ to “john” -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let first_name = "  JOHN   .";
+      first_name = first_name.toLowerCase().replace(".", "").trim();
+      //   console.log(first_name);
+
+      let text = "Pauline Kemunto";
+
+      //   console.log(text[8])
+      slice_text = text.slice(0, 7);
+      console.log(slice_text);
+    </script>
+  </body>
+</html> -->
+
+<!-- Slice the below string to get you the resulting sentence:
+sentence_one = “The Dog Breed is German Shepherd” 
+only display “Breed is German”
+sentence_two = “Defeats for the Clinton forces, 
+this was her moment of triumph” only display “Clinton forces” -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Given sentences
+      let sent_one = "The Dog Breed is German Shepherd";
+      let sent_two =
+        "Defeats for the Clinton forces, this was her moment of triumph";
+
+      // Extracting the desired parts
+      let result_one = sent_one.slice(
+        sent_one.indexOf("Breed"),
+        sent_one.length
+      );
+      let result_two = sent_two.slice(
+        sent_two.indexOf("Clinton forces"),
+        sent_two.indexOf("Clinton forces") + 13
+      );
+
+      // Displaying the results
+      // console.log(result_one);
+      // console.log(result_two);
+    </script>
+  </body>
+</html>
+
+<!-- Split the below sentence using a semicolon i.e ; 
+  And display length of the result. 
+“The lazy dog; ran so fast; it hit the wall.” -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Given sentence
+      let sentence = "The lazy dog; ran so fast; it hit the wall.";
+
+      // Splitting the sentence by semicolon
+      let split = sentence.split(";");
+
+      // Displaying the length of the resulting array
+      console.log("Length of the split:", split.length);
+    </script>
+  </body>
+</html>
