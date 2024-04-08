@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // declare a variable myarray
+
+      let myarray = [
+        "bett",
+        "lynne",
+        "cindy",
+        ["kevin", "lenox", [120, 550, 250]],
+        "kenah",
+        100,
+      ];
+      console.log(myarray);
+
+      //   accessing value in an array
+
+      console.log(myarray[1]);
+      console.log(myarray[1][2]);
+      console.log(myarray[3][1]);
+      console.log(myarray[3][2][0]);
+
+      // modifying arrays in js
+      myarray[0] = false;
+      console.log(myarray);
+      myarray[3][2][1] = 1000;
+      console.log(myarray);
+
+      //adding data to an array (push)
+      myarray.push("kemmy");
+      console.log(myarray);
+
+      //delete (pop)
+      myarray.pop();
+      console.log(myarray);
+
+      //remove element
+      myarray.shift();
+
+      //   add to index 0
+      myarray.unshift("bobo");
+
+    //   myarray.reverse();
+    //   console.log(myarray);
+    //   myarray.sort();
+    //   console.log(myarray);
+    //   myarray.splice(2, 0, "lemon", "kiwi");
+    //   console.log(myarray);
+      //slice
+      slice_arr = myarray.slice(2,5);
+      console.log(slice_arr);
+
+      // concat
+      let a = [1,2,3,4,5]
+      let b = [6,7,8,9,0]
+      let c = a.concat(b)
+      console.log(c)
+    </script>
+  </body>
+</html>
