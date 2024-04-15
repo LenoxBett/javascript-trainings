@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //    1. Create a variable and console log whether a number is odd or even
+      let number = prompt("enter number");
+
+      // Check if the number is odd or even
+      if (number % 2 === 0) {
+        console.log("The number " + number + " is even");
+      } else {
+        console.log("The number " + number + " is odd");
+      }
+
+    //   2. Create 3 variables and console log the largest of them. 
+    //   Assume that the user would not enter any two numbers which are the same.
+    let num1 = prompt("enter num1");
+    let num2 = prompt("enter num2");
+    let num3 = prompt("enter num3");
+    
+    let largest = num1;
+
+    // Compare num2 with largest
+    if (num2 > largest) {
+        largest = num2;
+    }
+
+    // Compare num3 with largest
+    if (num3 > largest) {
+        largest = num3;
+    }
+
+    // Log the largest number
+    console.log("The largest number is: " + largest);
+
+    // 3. Create a variable called year and enter the a random year. 
+    // Check if the year is a leap year or not. A leap year is a year 
+    // that is divisible by 4 or  by 400, except for years that are divisible by 100.
+    let year = 2032;
+
+    // Check if the year is divisible by 4 and not divisible by 100, or if it is divisible by 400
+    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+        console.log(year + " is a leap year");
+    } else {
+        console.log(year + " is not a leap year");
+    }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="loopstask.js"></script>
+    <script>
+      console.log(countries);
+
+      let zero = [];
+      let fifty = [];
+      let hundred = [];
+
+      for (let i = 0; i < countries.length; i++) {
+        console.log(countries[i].population);
+        pop = countries[i].population;
+        if (pop >= 0 && pop <= 50000000) {
+          zero.push(countries);
+        } else if (pop > 5000000 && pop <= 100000000) {
+          fifty.push(countries);
+        } else {
+          hundred.push(countries);
+        }
+      }
+
+      let pops = {};
+      pops["0-50m"] = zero.length;
+      pops["50-100m"] = fifty.length;
+      pops[">100m"] = hundred.length;
+      console.log(pops);
+    </script>
+  </body>
+</html>

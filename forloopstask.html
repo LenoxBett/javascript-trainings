@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Country Population Analysis</title>
+  </head>
+  <body>
+    <script>
+    //       Using the link HERE , copy the array of JSON objects containing
+    //       countries with their populations. Display in an object, how many
+    //       countries have population between 0 - 50m, 50m - 100m, > 100m as the keys
+    //   e.g
+    //   	pops = { “0-50m” : 216, “50-100m” : 16, ” >100m” : 13 }
+    
+
+          // Function to fetch data from the provided link
+          async function fetchData() {
+              try {
+                  const response = await fetch('https://api.jsonbin.io/b/605eb2ccfb02f86e708e5837');
+                  const data = await response.json();
+                  analyzePopulation(data);
+              } catch (error) {
+                  console.error('Error fetching data:', error);
+              }
+          }
+
+          // Function to analyze population data and display the result
+          function analyzePopulation(data) {
+              let popCount = {
+                  "0-50m": 0,
+                  "50-100m": 0,
+                  ">100m": 0
+              };
+
+              data.forEach(country => {
+                  const population = parseInt(country.population.replace(/,/g, ''));
+                  if (population <= 50000000) {
+                      popCount["0-50m"]++;
+                  } else if (population <= 100000000) {
+                      popCount["50-100m"]++;
+                  } else {
+                      popCount[">100m"]++;
+                  }
+              });
+
+              console.log(popCount); // Output the result to console
+              // You can modify this to display the result on the webpage as well
+
+              // Displaying the result on the webpage
+              const resultDiv = document.createElement('div');
+              resultDiv.innerHTML = `<pre>${JSON.stringify(popCount, null, 2)}</pre>`;
+              document.body.appendChild(resultDiv);
+          }
+
+          // Call the fetchData function when the page loads
+          window.onload = fetchData;
+    </script>
+  </body>
+</html>

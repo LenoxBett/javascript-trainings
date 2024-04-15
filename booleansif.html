@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1. Console log a boolean that checks if a number is between 0 and 100
+
+      //   2. Console log a boolean that gives you true only when an email is a
+      //   valid email. Do not use regular expressions.
+      const email = prompt("enter email");
+
+      if (
+        email.includes("@", ".") &&
+        email.indexOf("@") + 1 < email.indexOf(".") &&
+        email.indexOf(".") &&
+        email.indexOf(".") > email.length - 1 &&
+        email.indexOf("@") != 0
+      ) {
+        console.log("true");
+      } else {
+        console.log("false");
+      }
+
+      //3.   Console log a boolean that gives you true only when a phone number is a valid
+      //   Kenyan phone number. If someone enters either +254712345678, 254712345678,
+      //   0712345678 , 712345678, 0112345678, 112345678 it should be valid also
+
+      function Valid_Phone_Number(phoneNumber) {
+        // Remove non-digit characters
+        let digitsOnly = phoneNumber.replace(/\D/g, "");
+
+        // Check if the phone number is of valid length and starts with a valid prefix
+        if (
+          (digitsOnly.length === 9 && digitsOnly.startsWith("7")) || // Length is 9 and starts with 7
+          (digitsOnly.length === 10 && digitsOnly.startsWith("01")) || // Length is 10 and starts with 01
+          (digitsOnly.length === 12 && digitsOnly.startsWith("2547"))
+        ) {
+          // Length is 12 and starts with 2547
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      let phoneNumber1 = "+254712345678";
+
+      console.log("Is phoneNumber1 valid? " + Valid_Phone_Number(phoneNumber1));
+    </script>
+  </body>
+</html>
