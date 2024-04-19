@@ -9,4 +9,6 @@
 
 let form = document.getElementById("myform")
 
-form.addEventListener("submit",function )
+form.addEventListener("submit",function(e){
+    e.preventDefault()
+})
