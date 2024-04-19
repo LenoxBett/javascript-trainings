@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //         Calculate the taxable income.
+      // i.e taxable_income = gross salary - (NSSF + NHDF)
+
+      basic = parseFloat(prompt("enter basic: "));
+      benefits = parseFloat(prompt("enter benefits: "));
+      grossSalary = basic + benefits;
+
+      nhdf = grossSalary * 0.015;
+      if (grossSalary <= 18000) {
+        nssf = grossSalary * 0.06;
+      } else {
+        nssf = 18000 * 0.06;
+        //  print(nssf)
+
+        taxable_income = grossSalary - (nssf + nhdf);
+        console.log(taxable_income);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //         Write a program that takes input of someone's basic salary
+      //         and benefits, adds them to find the gross salary then uses
+      //         the gross salary to find the NHIF.
+      // To find the Kenya NHIF Rate using THIS LINK:
+    //   function calculateNHIF() {
+        // Get the input values
+        var basicSalary = document.getElementById("basicSalary").value;
+        var benefits = document.getElementById("benefits").value;
+
+        // Check if the input values are valid numbers
+        if (isNaN(basicSalary) || isNaN(benefits)) {
+          // Display an error message and exit the function
+          alert("Invalid character entered. Please enter a valid number.");
+        //   return;
+        }
+
+        // Convert the input values to floating-point numbers
+        basicSalary = parseFloat(basicSalary);
+        benefits = parseFloat(benefits);
+
+        // Calculate the gross salary
+        var grossSalary = basicSalary + benefits;
+
+        // Calculate the NHIF based on the new rates
+        var nhif = 0;
+        if (grossSalary < 6000) {
+          nhif = grossSalary * 0.15;
+        } else if (grossSalary >= 6000 && grossSalary < 12000) {
+          nhif = 900 + (grossSalary - 6000) * 0.2;
+        } else if (grossSalary >= 12000 && grossSalary < 18000) {
+          nhif = 1800 + (grossSalary - 12000) * 0.25;
+        } else if (grossSalary >= 18000 && grossSalary < 24000) {
+          nhif = 2800 + (grossSalary - 18000) * 0.3;
+        } else if (grossSalary >= 24000 && grossSalary < 30000) {
+          nhif = 3700 + (grossSalary - 24000) * 0.35;
+        } else if (grossSalary >= 30000 && grossSalary < 36000) {
+          nhif = 4500 + (grossSalary - 30000) * 0.4;
+        } else if (grossSalary >= 36000 && grossSalary < 48000) {
+          nhif = 5400 + (grossSalary - 36000) * 0.45;
+        } else if (grossSalary >= 48000) {
+          nhif = 7200 + (grossSalary - 48000) * 0.5;
+        }
+
+        // Display the NHIF value
+        document.getElementById("result").innerHTML = "The NHIF is: " + nhif;
+    //   }
+    </script>
+  </body>
+</html>

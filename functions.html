@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // create a function that says hello world
+      // parameters are variables inside a function
+      // arguments are exact values passed into a function
+
+      function hello(name, s_name) {
+        // let name = prompt("Enter name");
+        console.log(`Hello ${name}${s_name}`);
+      }
+      //   let your_name = prompt("Enter name");
+      //   let second_name = prompt("Enter second name");
+      //   hello(your_name);
+      hello("Bett", "Lenox");
+
+      //   area of a triangle
+      function area_of_triangle(a, b) {
+        let area = 0.5 * a * b;
+        console.log(area);
+      }
+
+      area_of_triangle(10, 20);
+      area_of_triangle(30, 50);
+
+      //   create a function that calc area of a rectangle and a square(use parameters)
+      function area_of_rect(l, w) {
+        let area = l * w;
+        console.log(area);
+      }
+      let l = prompt("Enter length");
+      let w = prompt("Enter width");
+
+      area_of_rect(l, w);
+
+      function area_of_sq(s, s) {
+        let area = s * s;
+        return area;
+      }
+
+      let square = area_of_sq(20, 20);
+      console.log(square);
+
+      //   write a function that checks if a number is odd or even
+      function check_number(num) {
+        let result = "";
+        if (num % 2 == 0) {
+          result = "even";
+        } else {
+          result = "odd";
+        }
+        return result;
+      }
+      let number = prompt("Enter number");
+      let check = check_number(number);
+      console.log(check);
+
+      // write a function that finds the largest number on
+      // 3 user inputs assuming all numbers are different
+
+      function largest_number(num1, num2, num3) {
+        let larger = "";
+        if (num1 > num2 && num1 > num3) {
+          larger = num1 + "largest";
+        } else if (num2 > num1 && num2 > num3) {
+          larger = num2 + "largest";
+        } else {
+          larger = num3 + "largest";
+        }
+        return larger;
+      }
+      let num1 = prompt("Enter number");
+      let num2 = prompt("Enter number");
+      let num3 = prompt("Enter number");
+      let large = largest_number(num1, num2, num3);
+      console.log(large);
+    </script>
+  </body>
+</html>
